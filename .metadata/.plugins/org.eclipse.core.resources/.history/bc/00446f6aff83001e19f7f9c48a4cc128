@@ -1,0 +1,5 @@
+package vidaalemdasgrades.repository;
+
+public class UsuarioRepository {
+
+}

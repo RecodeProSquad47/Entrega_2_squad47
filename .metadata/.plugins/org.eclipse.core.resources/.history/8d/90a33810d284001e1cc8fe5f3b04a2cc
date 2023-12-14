@@ -1,0 +1,16 @@
+package vidaalemdasgrades.controller;
+
+import vidaalemdasgrades.repository.ProjetosRepository;
+
+public class ProjetosController {
+	@Autowired
+	private ProjetosRepository projetoRepository;
+	
+	@GetMapping
+	public ModelAndView projeto() {
+		ModelAndView modelAndView = new ModelAndView("views/projetos/index.html");
+		modelAndView.addObject("projetos", projetoRepository.findAll());
+		return modelAndView;
+	}
+}
+

@@ -1,0 +1,18 @@
+package vidaalemdasgrades.controller;
+
+import vidaalemdasgrades.repository.ProjetosRepository;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class ProjetosController {
+	@Autowired
+	private ProjetosRepository projetoRepository;
+	
+	@GetMapping
+	public ModelAndView projeto() {
+		ModelAndView modelAndView = new ModelAndView("views/projetos/index.html");
+		modelAndView.addObject("projetos", projetoRepository.findAll());
+		return modelAndView;
+	}
+}
+

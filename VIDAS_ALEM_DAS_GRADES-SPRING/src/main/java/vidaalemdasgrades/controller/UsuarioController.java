@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,17 +30,24 @@ public class UsuarioController {
 		return modelAndView;
 	}
 	
-	@PostMapping({"/cadastrar", "/{id}/editar"})
+	@PostMapping({"/cadastrar"})
 	public String cadastrar(Usuarios usuario) {
 		usuarioRepository.save(usuario);
 		
 		return "redirect:/usuarios";
 	}
 	
-	@GetMapping("/{id}//excluir")
+	@GetMapping("/{id}/excluir")
 	public String excluir(@PathVariable Long id) {
 		usuarioRepository.deleteById(id);
 		
 		return "redirect:/usuarios";
 	}
+	@PutMapping({"/editar/{id}"})
+	public String editar(@PathVariable Long id, Usuarios usuario) {
+		usuarioRepository.save(usuario);
+		
+		return "redirect:/usuarios";
+	}
+	
 }

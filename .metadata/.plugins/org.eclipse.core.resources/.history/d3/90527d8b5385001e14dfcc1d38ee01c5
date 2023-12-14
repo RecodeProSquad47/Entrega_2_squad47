@@ -1,0 +1,3 @@
+spring.datasource.url=jdbc:postgresql://localhost:3306/vidaalemdasgrades
+spring.datasource.username=root
+spring.datasource.password=Ma@05091997

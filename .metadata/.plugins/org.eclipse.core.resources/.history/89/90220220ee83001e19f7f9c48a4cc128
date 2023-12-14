@@ -1,0 +1,26 @@
+package vidaalemdasgrades.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GeneratedType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+
+@Data
+@AllArgsConstructor
+@Entity
+@Table(name = "projeto")
+public class Projetos {
+	
+	//Attributes
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTIFY)
+	private int id;
+	private String descricao;
+	private String link;
+	private Number telefone;
+	
+	

@@ -1,0 +1,22 @@
+package vidaalemdasgrades.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import vidaalemdasgrades.model.Usuarios;
+
+@RestController
+@RequestMapping("/usuarios")
+public class UsuarioController {
+
+    @PostMapping("/create")
+    public ResponseEntity<Usuarios> createUsuario(Usuarios usuario) {
+        // Inserir o usuário no MySQL
+        // ...
+
+        // Retornar o usuário criado
+        return ResponseEntity.ok(usuario);
+    }
+}

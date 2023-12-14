@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+
+ $(document).ready(function(){
+	 $('.table .eBtn').on('click', function(event){
+		 event.preventDefault();
+		 var href = $(this).attr('href');
+		 
+		 $.get(href,function(usuarios){
+			 $('.myForm #id').val(usuarios.id);
+			 $('.myForm #nome').val(usuarios.id);
+			 $('.myForm #email').val(usuarios.id);
+			 $('.myForm #senha').val(usuarios.id);
+			 $('.myForm #cpf').val(usuarios.id);
+		 });
+		 
+		 $('myForm #exampleModal').modal();
+	 });
+ });

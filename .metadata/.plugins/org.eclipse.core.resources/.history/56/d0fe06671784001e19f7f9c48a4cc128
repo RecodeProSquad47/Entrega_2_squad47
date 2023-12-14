@@ -1,0 +1,11 @@
+package vidaalemdasgrades.repository;
+
+import org.springframework.stereotype.Repository;
+
+import vidaalemdasgrades.model.Projetos;
+
+@Repository
+public interface CursosRepository extends JpaRepository<Cursos, Long> {
+
+}
+

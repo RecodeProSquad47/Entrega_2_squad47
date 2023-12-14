@@ -1,0 +1,31 @@
+<!-- Modal -->                   
+<div class="modal fade" th:id="'exampleModal' + ${u.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">                     
+	<div class="modal-dialog">                       
+		<div class="modal-content">                         
+			<div class="modal-header">                           
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>                           
+				<button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>                         
+			</div>                         
+				<div class="modal-body">                           
+					<form th:action="@{/usuarios/cadastrar}" method="post" th:object="${usuario}">                             
+						<h2 class="text-center">Atualizar</h2>                             
+						<input type="hidden" id="id" name="id" class="form-control"th:value="${u.id}"/>                             
+						<div class="form-group mb-3">                               
+							<label for="nome" class="form-label">Nome</label>                               
+							<input type="text" id="nome" name="nome"class="form-control" th:value="${u.nome}"/>
+						</div>                             
+							<div class="form-group mb-3">                               
+								<label for="email" class="form-label">Email</label>                               
+								<input type="email" id="email" name="email" class="form-control" th:value="${u.email}"/>
+							</div>                             
+								<div class="form-group mb-3">                               
+									<label for="senha" class="form-label">Senha</label>                               
+								<input type="password" id="senha" name="senha" class="form-control" th:value="${u.senha}" />
+							    </div>                             
+								<button type="submit" class="btn btn-primary">Enviar</button>                             
+								<a href="./usuarios" class="btn btn-danger" style="margin-left: 10px">Cancelar</a>                           
+					</form>                         
+				</div>                       
+		</div>                     
+	</div>                   
+</div>

@@ -1,0 +1,8 @@
+package vidaalemdasgrades.repository;
+
+import vidaalemdasgrades.model.Usuarios;
+
+@Repository
+public interface UsuarioRepository extends JpaRepository<Usuarios, long> {
+
+}

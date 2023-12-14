@@ -1,9 +1,9 @@
-create database Vidas_Alem_das_Grades;
+create database vidaalemdasgrades;
 
-use Vidas_Alem_das_Grades;
+use vidaalemdasgrades;
 
 
-CREATE TABLE Usuarios (
+CREATE TABLE Usuario (
     idUsuario VARCHAR(10) PRIMARY KEY,
     Nome VARCHAR(100),
     Email VARCHAR(100),
@@ -11,7 +11,7 @@ CREATE TABLE Usuarios (
     CPF VARCHAR(11)
 );
 
-CREATE TABLE Projetos (
+CREATE TABLE Projeto (
     idProjeto VARCHAR(10) PRIMARY KEY,
     Descrição VARCHAR(150),
     Link  VARCHAR(150),
@@ -25,19 +25,25 @@ CREATE TABLE Cursos (
     Link VARCHAR(150),
     fk_Usuarios_idUsuario VARCHAR(10)
 );
-CREATE TABLE Vagas (
+CREATE TABLE Vaga (
     idVagas VARCHAR(10) PRIMARY KEY,
     Descricao VARCHAR(150),
     Telefone VARCHAR(11),
     fk_Empresas_idEmpresa VARCHAR(10),
     fk_Usuarios_idUsuario VARCHAR(10)
 );
-CREATE TABLE Empresas (
+CREATE TABLE Empresa (
     idEmpresa VARCHAR(10) PRIMARY KEY,
     Nome VARCHAR(100),
     CNPJ VARCHAR(14),
     Descricao VARCHAR(150),
     Telefone VARCHAR(11)
+);
+CREATE TABLE Contato (
+    idUsuario VARCHAR(10) PRIMARY KEY,
+    Nome VARCHAR(100),
+    Email VARCHAR(100),
+	Descricao VARCHAR(150)
 );
 
 ALTER TABLE Projetos ADD CONSTRAINT FK_Projetos_2
@@ -62,12 +68,12 @@ ALTER TABLE Vagas ADD CONSTRAINT FK_Vagas_3
     
 ALTER TABLE Vagas MODIFY COLUMN Telefone VARCHAR(15);
 
-SELECT * FROM Usuarios;
-SELECT * FROM Projetos;
-SELECT * FROM Cursos;
-SELECT * FROM Vagas;
-SELECT * FROM Empresas;
-
+SELECT * FROM Usuario;
+SELECT * FROM Projeto;
+SELECT * FROM Curso;
+SELECT * FROM Vaga;
+SELECT * FROM Empresa;
+SELECT * FROM Contato;
 
 INSERT INTO Usuarios (idUsuario, Nome, Email, Senha, CPF)
 VALUES ('1', 'João Silva', 'joao.silva@email.com', '1234567890', '12345678901');
